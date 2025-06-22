@@ -63,8 +63,11 @@ const db=require('./db')
 // const Person=require('./models/Person')
 const MenuItem=require("./models/MenuItem")
 const Task=require("./models/Tasking")
+require('dotenv').config();
 
 const bodyParser=require("body-parser")
+
+const PORT=process.env.PORT || 3000;
 
 
 app.use(bodyParser.json())  //req.body
@@ -223,7 +226,7 @@ app.use('/menu',menuRoutes)
 
 
 
-app.listen(3000,()=>{
+app.listen(PORT,()=>{
     console.log('listening on port 3000')
 })
 
